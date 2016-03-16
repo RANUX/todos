@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "module": "system",
+    "target": "es5"
+    
+  },
+  "files": [
+        "client/app.ts",
+        "collections/todo.ts",
+        "typings/main.d.ts",
+        "typings/angular2-meteor/angular2-meteor.d.ts",
+        "typings/ng2-meteor-accounts/ng2-meteor-accounts.d.ts",
+        "typings/todo.d.ts"
+
+  ]
+}
