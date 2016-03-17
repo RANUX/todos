@@ -1,3 +1,13 @@
-ul
-    li( *ngFor="#todo of todos") {{ todo.name }}
-        p {{ todo.description }}
+section
+    .container
+        .row
+            .col-md-12
+                .well
+                    todo-form
+        .row
+            .col-md-12
+                ul
+                    li( *ngFor="#todo of todos") {{ todo.name }}
+                        p Description: {{ todo.description }}
+                        p Priority: {{ todo.priority }}
+                        button((click)="removeTodo(todo)").btn.btn-default.btn-sm X

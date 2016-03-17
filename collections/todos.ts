@@ -1,20 +1,23 @@
 
 export var Todos = new Mongo.Collection<ToDo>('todos');
 
-// Todos.allow({
-//     insert: function() {
-//     var user = Meteor.user();
-//     return !!user;
-//   },
-//   update: function() {
-//     var user = Meteor.user();
-//     return !!user;
-//   },
-//   remove: function() {
-//     var user = Meteor.user();
-//     return !!user;
-//   }
-// });
+Todos.allow({
+    insert: function() {
+    var user = Meteor.user();
+    return true;
+    //return !!user;
+  },
+  update: function() {
+    var user = Meteor.user();
+    return true;
+    //return !!user;
+  },
+  remove: function() {
+    var user = Meteor.user();
+    return true;
+    //return !!user;
+  }
+});
 
 // Things.allow({
 //   insert: function(userId, thing) {

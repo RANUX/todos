@@ -6,13 +6,15 @@
     
   },
   "files": [
-        "collections/todos.ts",
-        "server/todos.ts",
         "typings/main.d.ts",
         "typings/angular2-meteor/angular2-meteor.d.ts",
         "typings/ng2-meteor-accounts/ng2-meteor-accounts.d.ts",
         "typings/todos.d.ts",
+        "collections/todos.ts",
+        "server/todos.ts",
         "client/app.ts",
-        "server/main.ts"
+        "client/todos/todosForm.ts",
+        "server/main.ts",
+        "server/load-test-todos.ts"
   ]
 }

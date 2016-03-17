@@ -1,26 +1,30 @@
 
 
 import {Component, View, NgZone} from 'angular2/core';
-import {bootstrap} from 'angular2/platform/browser';
+import {bootstrap} from 'angular2-meteor';
 import {Todos} from 'collections/todos';
- 
+import {TodosForm} from 'client/todos/todosForm'
 
 @Component({
     selector: 'app'
 })
 @View({
-    templateUrl: 'client/app.html'
+    templateUrl: 'client/app.html',
+    directives: [TodosForm]
 })
-class ToDo { 
+class ToDoApp { 
     
-    todos : any[];
+    todos : Mongo.Cursor<Object>;
     
     constructor (zone: NgZone) 
     {
         // Reactive wrapper that will run data when a change occurs
-        Tracker.autorun(() => zone.run(() => {
-            this.todos = Todos.find().fetch();
-        }));
+        // Tracker.autorun(() => zone.run(() => {
+        //     this.todos = Todos.find().fetch();
+        // }));
+        
+        this.todos = Todos.find();
+        
         
     // this.todos = [
     //     {
@@ -38,10 +42,16 @@ class ToDo {
 
     // ];
 
-}
+    }
+    
+        
+    removeTodo(todo : ToDo)
+    {
+        Todos.remove(todo._id);
+    }
 }
 
  
 
-bootstrap(ToDo);
+bootstrap(ToDoApp);
 
