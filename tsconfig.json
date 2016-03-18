@@ -13,7 +13,9 @@
         "collections/todos.ts",
         "server/todos.ts",
         "client/app.ts",
-        "client/todos/todosForm.ts",
+        "client/todos/todoForm.ts",
+        "client/todos/todoList.ts",
+        "client/todos/todoItem.ts",
         "server/main.ts",
         "server/load-test-todos.ts"
   ]

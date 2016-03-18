@@ -1,57 +1,28 @@
 
 
-import {Component, View, NgZone} from 'angular2/core';
+import {Component, View, provide} from 'angular2/core';
 import {bootstrap} from 'angular2-meteor';
-import {Todos} from 'collections/todos';
-import {TodosForm} from 'client/todos/todosForm'
+import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig, APP_BASE_HREF} from 'angular2/router';
+import {TodoList}  from './todos/todoList';
+import {TodoItem}  from './todos/todoItem';
 
 @Component({
     selector: 'app'
 })
+
 @View({
-    templateUrl: 'client/app.html',
-    directives: [TodosForm]
+    template: '<router-outlet>',        // "default layout" template. Render a view on the page based on the current URL.
+    directives: [ROUTER_DIRECTIVES]
 })
-class ToDoApp { 
-    
-    todos : Mongo.Cursor<Object>;
-    
-    constructor (zone: NgZone) 
-    {
-        // Reactive wrapper that will run data when a change occurs
-        // Tracker.autorun(() => zone.run(() => {
-        //     this.todos = Todos.find().fetch();
-        // }));
-        
-        this.todos = Todos.find();
-        
-        
-    // this.todos = [
-    //     {
-    //         'name': 'Создать новый сайт',
-    //         'description': 'Надо узнать сколько стоит.',
-    //     },
-    //     {
-    //         'name': 'Изменить список покупок',
-    //         'description': 'Добавить покупки!',
-    //     },
-    //     {
-    //         'name': 'Это еще один вариант того, что надо сделать',
-    //         'description': 'Надо обязательно сделать!',
-    //     }
 
-    // ];
+@RouteConfig([
+    { path: '/',             as: 'TodoList',  component: TodoList },
+    { path: '/todo/:todoId', as: 'TodoItem',  component: TodoItem }
+])
 
-    }
+class ToDoApp {
     
-        
-    removeTodo(todo : ToDo)
-    {
-        Todos.remove(todo._id);
-    }
 }
 
- 
-
-bootstrap(ToDoApp);
+bootstrap(ToDoApp, [ROUTER_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
 

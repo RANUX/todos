@@ -7,10 +7,10 @@ import {Todos} from 'collections/todos';
 })
 
 @View({
-    templateUrl: 'client/todos/todo-form.html'
+    templateUrl: 'client/todos/templates/todo-form.html'
 })
 
-export class TodosForm {
+export class TodoForm {
     
     todosForm: ControlGroup;
     
