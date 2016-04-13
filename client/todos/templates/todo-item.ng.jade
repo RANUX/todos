@@ -1,6 +1,10 @@
 
 header
-    h2 TODO_NAME
-    p  TODO_DESCRIPTION
+    h2 {{ todo.name }}
+    p  {{ todo.description }}
+    p  {{ todo.priority }}
+    
+a([routerLink]="['/TodoList']") Back to ToDo List
+    
 
 

@@ -3,12 +3,10 @@ import {FormBuilder, Control, ControlGroup, Validators} from 'angular2/common';
 import {Todos} from 'collections/todos';
 
 @Component({
-    selector: 'todo-form'
-})
-
-@View({
+    selector: 'todo-form',
     templateUrl: 'client/todos/templates/todo-form.html'
 })
+
 
 export class TodoForm {
     
