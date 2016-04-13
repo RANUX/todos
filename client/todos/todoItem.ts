@@ -31,7 +31,7 @@ export class TodoItem {
         this.todo = Todos.findOne(todoId);
         
         this.todosFormSave = fb.group({
-            id : [ this.todo._id, Validators.required],
+            _id : [ this.todo._id, Validators.required],
             name: [ this.todo.name, Validators.required],
             description: [ this.todo.description ],
             priority: [ this.todo.priority, Validators.required]
@@ -44,7 +44,7 @@ export class TodoItem {
         if (this.todosFormSave.valid) {
             console.log(todo);
             
-            var res = Todos.update( todo.id, {
+            var res = Todos.update( todo._id, {
                 $set: {
                     name: todo.name,
                     description : todo.description,
