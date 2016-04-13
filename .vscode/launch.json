@@ -1,0 +1,15 @@
+
+{
+    "version": "0.1.0",
+    // List of configurations. Add new configurations or edit existing ones.  
+    // ONLY "node" and "mono" are supported, change "type" to switch.
+    "configurations": [
+        {
+            "name": "Attach to meteor",
+            "type": "node",
+            "request": "attach",
+            "port": 5858
+        }
+
+    ]
+}

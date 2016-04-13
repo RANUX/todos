@@ -40,10 +40,8 @@ export class TodoItem {
     
     saveTodo(todo) {
 
-        //console.log(this.todosFormSave.valid);
-        if (this.todosFormSave.valid) {
-            console.log(todo);
-            
+        if (this.todosFormSave.valid) 
+        {
             var res = Todos.update( todo._id, {
                 $set: {
                     name: todo.name,
