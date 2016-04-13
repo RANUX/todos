@@ -1,6 +1,6 @@
 
 
-form([ngFormModel]='todosForm', #f='ngForm', (submit)='addTodo(f.value)')
+form([ngFormModel]='todosForm', #f='ngForm', (submit)='addNewTodo(f.value)')
     .form-group
         label Name
         input.form-control(type='text', ngControl="name")

@@ -1,0 +1,18 @@
+
+
+form([ngFormModel]='todosFormSave', #f='ngForm', (submit)='saveTodo(f.value)')
+    .form-group
+        label Name
+        input.form-control(type='text', ngControl="name" [(ngModel)]="todo.name")
+    .form-group
+        label Description
+        textarea.form-control(type='text', ngControl="description" [(ngModel)]="todo.description")
+    .form-group
+        label Priority
+        select.form-control(ngControl="priority" [(ngModel)]="todo.priority")
+            option(value=1) Low
+            option(value=2) Medium
+            option(value=3) High
+    button.btn.btn-default.btn-sm Add new Todo
+
+

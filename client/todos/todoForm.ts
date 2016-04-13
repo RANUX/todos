@@ -2,6 +2,7 @@ import {Component, View} from 'angular2/core';
 import {FormBuilder, Control, ControlGroup, Validators} from 'angular2/common';
 import {Todos} from 'collections/todos';
 
+
 @Component({
     selector: 'todo-form',
     templateUrl: 'client/todos/templates/todo-form.html'
@@ -24,7 +25,7 @@ export class TodoForm {
         });
     }
     
-    addTodo(todo) {
+    addNewTodo(todo) {
         
         if (this.todosForm.valid) {
                 Todos.insert({
@@ -40,6 +41,7 @@ export class TodoForm {
             console.log('Invalid todo form!');
         }
     }
+    
 
  }
 

@@ -13,6 +13,7 @@
         "collections/todos.ts",
         "server/todos.ts",
         "client/app.ts",
+        "client/todos/todoFormSave.ts",
         "client/todos/todoForm.ts",
         "client/todos/todoList.ts",
         "client/todos/todoItem.ts",

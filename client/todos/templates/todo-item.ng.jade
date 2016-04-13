@@ -1,8 +1,29 @@
 
-header
-    h2 {{ todo.name }}
-    p  {{ todo.description }}
-    p  {{ todo.priority }}
+section
+    .container
+        .row
+            .col-md-12
+                .well
+                    form([ngFormModel]='todosFormSave', #f='ngForm', (submit)='saveTodo(f.value)')
+                        .form-group
+                            label Name
+                            input.form-control(type='text', ngControl='name', [(ngModel)]='todo.name')
+                        .form-group
+                            label Description
+                            textarea.form-control(type='text', ngControl='description', [(ngModel)]='todo.description')
+                        .form-group
+                            label Priority
+                            select.form-control( ngControl='priority', [(ngModel)]='todo.priority')
+                                option(value=1) Low
+                                option(value=2) Medium
+                                option(value=3) Hig
+                        button.btn.btn-default.btn-sm Add new Todo
+        .row
+            .col-md-12
+                h2 {{ todo.name }}
+                p  {{ todo.description }}
+                p  {{ todo.priority }}
+                
     
 a([routerLink]="['/TodoList']") Back to ToDo List
     
